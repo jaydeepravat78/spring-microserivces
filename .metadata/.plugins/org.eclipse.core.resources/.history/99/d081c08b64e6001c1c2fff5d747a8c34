@@ -1,0 +1,12 @@
+package com.example.userserive.services;
+
+import java.util.Optional;
+
+import com.example.userserive.entity.User;
+import com.example.userserive.response.Response;
+
+public interface UserService {
+	User addUser(User user);
+	
+	Response getUser(long id);
+}

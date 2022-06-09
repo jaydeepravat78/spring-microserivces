@@ -1,0 +1,5 @@
+package com.example.userserive.response;
+
+public class Address {
+
+}

@@ -1,0 +1,19 @@
+package com.example.userserive.services;
+
+import com.example.userserive.entity.User;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public User addUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User getUser(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

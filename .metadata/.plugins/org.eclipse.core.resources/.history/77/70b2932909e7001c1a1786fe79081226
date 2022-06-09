@@ -1,0 +1,13 @@
+package com.example.apigateway;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FallbackController {
+	public String userServiceFallBackMethod() {
+		return "User service isn't available";
+	}
+	public String addressSericeFallBackMethod() {
+		return "Address service isn't available";
+	}
+}

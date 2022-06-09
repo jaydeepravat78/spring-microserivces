@@ -1,0 +1,12 @@
+server:
+  port: 9006
+  
+spring:
+  application:
+    name: CLOUD-CONFIG
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          uri: https://github.com/jaydeepravat78/cloud-config/tree/main

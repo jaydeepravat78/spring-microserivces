@@ -1,0 +1,29 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/users/**
+      - id: ADDRESS-SERVICE
+        uri: lb://ADDESS-SERVICE
+        predicates:
+        - Path=/address/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: USER-SERVICE
+            fallbackuri: forward:/userServiceFallback
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defult-zone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost

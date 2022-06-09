@@ -1,0 +1,16 @@
+package com.example.addressservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.addressservice.enitity.Address;
+import com.example.addressservice.service.AddressService;
+
+public class AddressController {
+	@Autowired
+	AddressService addressService;
+	
+	public Address addAddress(@RequestBody Address) {
+		
+	}
+}

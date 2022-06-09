@@ -1,0 +1,34 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/users/**
+      - id: ADDRESS-SERVICE
+        uri: lb://ADDRESS-SERVICE
+        predicates:
+        - Path=/address/**
+    config:
+      enabled: true
+      uri: http://localhost:9006
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+
+hystrix:
+  command:
+    fallbackCmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
