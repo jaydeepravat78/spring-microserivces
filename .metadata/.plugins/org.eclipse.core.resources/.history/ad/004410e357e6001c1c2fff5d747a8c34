@@ -1,8 +1,0 @@
-package com.example.userserive.response;
-
-public class Address {
-	long id;
-	String ciy;
-	String state;
-	
-}

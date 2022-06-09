@@ -1,9 +1,0 @@
-package com.example.userserive.services;
-
-import com.example.userserive.entity.User;
-
-public interface UserService {
-	User addUser(User user);
-	
-	User getUser(long id);
-}
