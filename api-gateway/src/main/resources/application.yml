@@ -16,13 +16,14 @@ spring:
         - Path=/address/**
   main:
     web-application-type: reactive
-        
+  liquibase:
+    change-log:
+
 management:
   endpoints:
     web:
       exposure:
         include: hystrix.stream
-
 
 hystrix:
   command:
@@ -31,12 +32,12 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 5000
-            
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defult-zone: http://localhost:8761/eureka/
+      default-zone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
